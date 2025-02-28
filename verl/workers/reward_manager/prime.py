@@ -83,6 +83,8 @@ class PrimeRewardManager:
         self.tokenizer = tokenizer
         self.num_examine = num_examine  # the number of batches of decoded responses to print to the console
         self.compute_score = compute_score or _default_compute_score
+        if compute_score:
+            print(111222)
 
     def __call__(self, data: DataProto):
         """We will expand this function gradually based on the available datasets"""

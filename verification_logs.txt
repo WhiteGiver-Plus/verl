@@ -1,0 +1,4805 @@
+Not found
+
+==================================================
+Timestamp: 2025-02-28 16:31:34.216595
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_17394 (width height : ℕ) (h₀ : Nat.gcd width height = 1) (h₁ : width / height = 2 / 3)
+    (h₂ : 2 * (width + height) = 260) : width + height = 130 := by
+    -- We use the given ratio and perimeter to set up the equation.
+    have h₄ := Nat.gcd_eq_right width height h₀
+    -- Simplify the equation using the given ratio and perimeter.
+    omega
+  -- Finally, we conclude that the sum of width and height is 130.
+  exact h₃
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 32
+      },
+      "endPos": {
+        "line": 12,
+        "column": 37
+      },
+      "data": "application type mismatch\n  gcd_eq_right width\nargument\n  width\nhas type\n  \u2115 : Type\nbut is expected to have type\n  ?m.365 \u2223 ?m.364 : Prop"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 10,
+        "column": 64
+      },
+      "endPos": {
+        "line": 14,
+        "column": 9
+      },
+      "data": "unsolved goals\nwidth height : \u2115\nh\u2080 : width.gcd height = 1\nh\u2081 : width / height = 2 / 3\nh\u2082 : 2 * (width + height) = 260\n\u22a2 width + height = 130"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 16,
+        "column": 2
+      },
+      "endPos": {
+        "line": 16,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:31:34.422894
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_17612 (a1 a17 : ℤ) (d : ℤ) (h₀ : a1 = 3) (h₁ : a17 = 35) (h₂ : a17 = a1 + 16 * d) : d = 2 := by
+  -- Substitute the given values of a1 and a17 into the equation.
+  simp_all only [h₀, h₁, h₂]
+  -- We now have the equation 35 = 3 + 16d. Solve for d.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:32:39.095531
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20616 (n : ℕ) (h₀ : n > 0) :
+    let time_per_cut := 8;
+    let total_cuts := n - 1;
+    let total_time := time_per_cut * total_cuts;
+    total_time = 24 → n = 4 := by
+  -- Introduce the variables and hypotheses
+  intro time_per_cut total_cuts total_time h₁
+  -- Simplify the expressions and equations
+  simp_all only [mul_one, mul_zero, Nat.zero_eq, Nat.succ_eq_add_one]
+  -- Normalize the equation to isolate n
+  ring_nf at h₁
+  -- Use the omega tactic to solve for n
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 17,
+        "column": 2
+      },
+      "endPos": {
+        "line": 17,
+        "column": 69
+      },
+      "data": "simp_all made no progress"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:32:39.138942
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_21242 (p : ℚ)
+    (h₀ : p = 3 / 34) : p = 3 / 34 ∧ ∃ m n : ℕ, m < n ∧ p = m / n ∧ Nat.gcd m n = 1 := by
+  -- We start by acknowledging the given equality p = 3 / 34.
+  have h₁ : p = 3 / 34 := h₀
+  -- We need to show that p = 3 / 34 and that it is a reduced fraction.
+  refine ⟨h₁, ?_⟩
+  -- We use the fact that p = 3 / 34 to find a representation of p as a reduced fraction.
+  use 3, 34
+  -- We introduce the condition that 3 < 34, which is true.
+  constructor
+  norm_num
+  -- We verify that p = 3 / 34 by substituting the given value.
+  rw [h₁]
+  -- We check that the greatest common divisor of 3 and 34 is 1, ensuring the fraction is reduced.
+  norm_num
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:32:39.229187
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16527 (x : ℝ) (h₀ : x > 0)
+    (h₁ : 40 * x = 60 * (x - 1)) : x = 3 := by
+    apply Eq.symm
+    -- Show that 40 * 3 = 60 * (3 - 1)
+    linarith
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:32:39.262336
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20616 (n : ℕ) (h₀ : n > 0) :
+    let time_per_cut := 8;
+    let total_cuts := n - 1;
+    let total_time := time_per_cut * total_cuts;
+    total_time = 24 → n = 4 := by
+  -- Introduce the assumptions and simplify the context
+  rintro ⟨⟩
+  -- Use the omega tactic to solve the resulting linear equation
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 31
+      },
+      "endPos": {
+        "line": 17,
+        "column": 7
+      },
+      "data": "unsolved goals\ncase succ\nn : \u2115\nh\u2080 : n > 0\nn\u271d : \u2115\n\u22a2 let total_cuts := n - 1;\n  let total_time := (n\u271d + 1) * total_cuts;\n  total_time = 24 \u2192 n = 4"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:32:39.262739
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16527 (x : ℝ) (h₀ : x > 0)
+    (h₁ : 40 * x = 60 * (x - 1)) : x = 3 := by linarith
+  -- The solution x = 3 satisfies the original equation.
+  exact h₅
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 2
+      },
+      "endPos": {
+        "line": 12,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:32:39.267732
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16527 (x : ℝ) (h₀ : x > 0)
+    (h₁ : 40 * x = 60 * (x - 1)) : x = 3 := by linarith
+  -- Conclude the proof with the solution x = 3.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 2
+      },
+      "endPos": {
+        "line": 12,
+        "column": 10
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:32:39.312730
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16527 (x : ℝ) (h₀ : x > 0)
+    (h₁ : 40 * x = 60 * (x - 1)) : x = 3 := by
+  -- Distribute the 60 on the right side and simplify
+  have h₁ : 40 * x = 60 * (x - 1) := h₁
+  -- Simplify the equation by distributing and collecting like terms
+  field_simp at h₁
+  ring_nf at h₁
+  -- Solve the simplified equation using linear arithmetic
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:32:39.348261
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_19678 (cherry_soda oranges_pop total_cans : ℕ) 
+  (h₀ : total_cans = 24)
+  (h₁ : total_cans = cherries_soda + 2 * cherries_soda) : cherries_soda = 8 := by linarith -- Using linarith to solve for cherries_soda.
+  -- Finally, we conclude the proof.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 2
+      },
+      "endPos": {
+        "line": 13,
+        "column": 10
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:32:39.422353
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16563 (lizzie_score : ℕ) (nathalie_score : ℕ) (aimee_score : ℕ) (teammates_score : ℕ)
+  (h₀ : lizzie_score = 4) (h₁ : nathalie_score = lizzie_score + 3) (h₂ : aimee_score = 2 * (lizzie_score + nathalie_score))
+  (h₃ : lizzie_score + nathalie_score + aimee_score + teammates_score = 50) : teammates_score = 17 := by
+  -- Substitute Lizzie's score into the equations
+  rw [h₀] at h₁ h₂ h₃
+  -- Substitute Nathalie's score into the equations
+  rw [h₁] at h₂ h₃
+  -- Substitute Aimee's score into the equations
+  rw [h₂] at h₃
+  -- Solve for the teammates' score using the total points
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+Not found
+
+==================================================
+Timestamp: 2025-02-28 16:33:12.132392
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_27186 (hours_per_adult_grave : ℝ) (hours_per_child_grave : ℝ) (x : ℝ)
+    (h₀ : hours_per_adult_grave = 3) (h₁ : hours_per_child_grave = 2) (h₂ : x * hours_per_adult_grave + 1 * hours_per_child_grave = 17) :
+    x = 5 := by
+  -- Substitute the given values for hours_per_adult_grave and hours_per_child_grave into the equation.
+  rw [h₀] at h₂;
+  rw [h₁] at h₂;
+  -- Simplify the equation by performing arithmetic operations.
+  norm_num at h₂;
+  -- Use linear arithmetic to solve for x.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:33:12.134328
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_27186 (hours_per_adult_grave : ℝ) (hours_per_child_grave : ℝ) (x : ℝ)
+    (h₀ : hours_per_adult_grave = 3) (h₁ : hours_per_child_grave = 2) (h₂ : x * hours_per_adult_grave + 1 * hours_per_child_grave = 17) :
+    x = 5 := by
+  -- We know the hours per adult grave and per child grave.
+  have h₃ : hours_per_adult_grave = 3 := h₀
+  have h₄ : hours_per_child_grave = 2 := h₁
+  -- Substitute the known values into the equation.
+  rw [h₃, h₄] at h₂
+  -- Simplify the equation to solve for x.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:33:12.176380
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_27186 (hours_per_adult_grave : ℝ) (hours_per_child_grave : ℝ) (x : ℝ)
+    (h₀ : hours_per_adult_grave = 3) (h₁ : hours_per_child_grave = 2) (h₂ : x * hours_per_adult_grave + 1 * hours_per_child_grave = 17) :
+    x = 5 := by
+  -- Substitute the given values for hours per adult grave and hours per child grave.
+  rw [h₀] at h₂
+  rw [h₁] at h₂
+  -- Simplify the equation by removing the multiplication by 1.
+  simp at h₂
+  -- Solve for x using linear arithmetic.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:33:12.211018
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_27186 (hours_per_adult_grave : ℝ) (hours_per_child_grave : ℝ) (x : ℝ)
+    (h₀ : hours_per_adult_grave = 3) (h₁ : hours_per_child_grave = 2) (h₂ : x * hours_per_adult_grave + 1 * hours_per_child_grave = 17) :
+    x = 5 := by
+  -- Substitute the given values for hours_per_adult_grave and hours_per_child_grave into the equation.
+  rw [h₀] at h₂
+  rw [h₁] at h₂
+  -- Simplify the equation by performing the multiplication and then isolating the term with the variable x.
+  linarith
+  -- Use linarith to verify that the solution x = 5 satisfies the original equation.
+  <;> linarith
+  <;> linarith
+  <;> linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:33:12.338669
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_13971 (x : ℝ) (h₀ : x > 0) (h₁ : x / 4 = (x - 6) / 2) : x = 12 := by
+  -- Eliminate the denominators by multiplying both sides by 4
+  have h₂ : x / 4 = (x - 6) / 2 := h₁
+  -- Simplify the equation by eliminating the fractions
+  field_simp at h₂
+  -- Solve for x using linear arithmetic
+  linarith
+  -- Simplify all expressions and verify the solution
+  <;> simp_all
+  <;> linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:33:12.351825
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_13971 (x : ℝ) (h₀ : x > 0) (h₁ : x / 4 = (x - 6) / 2) : x = 12 := by
+  -- Eliminate the denominators by multiplying both sides by 4
+  have h₂ : x / 4 = (x - 6) / 2 := h₁
+  field_simp [h₀.ne', h₀.ne] at h₂
+  -- Simplify the equation to x = 2(x - 6)
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:33:44.713204
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_1601 (x : ℝ) (h₀ : x * (2 / 5) + 45 + 15 = x) : x = 100 := by linarith
+  -- Step 4: Solve for x by multiplying both sides by the reciprocal of 3/5.
+  -- x = 60 * (5/3) = 100
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 2
+      },
+      "endPos": {
+        "line": 12,
+        "column": 10
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:33:44.821944
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_1601 (x : ℝ) (h₀ : x * (2 / 5) + 45 + 15 = x) : x = 100 := by
+  -- Simplify the equation by combining constant terms and removing the fraction.
+  field_simp at h₀
+  -- Use basic arithmetic operations to solve for x.
+  norm_num at h₀
+  -- Use linear arithmetic to solve the simplified equation.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:34:44.552124
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_6059 (x : ℚ)
+    (h : 25 / 100 * x = 20 / 100 * 30) : x = 24 := by
+    -- Simplify the fractions and solve for x.
+    field_simp [mul_comm] at h
+    -- Use linear arithmetic to solve for x.
+    linarith
+  -- Conclude the proof by assumption.
+  assumption
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 16,
+        "column": 2
+      },
+      "endPos": {
+        "line": 16,
+        "column": 12
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:16.913793
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_2647 (x : ℕ) (h₀ : 7 * 18 - x * 18 = 18) : x = 6 := by
+    -- Apply the symmetry of equality to the given equation.
+    apply Eq.symm
+    -- Apply the function subtraction on both sides of the equation.
+    apply Eq.sub_iff_eq_add.2
+    -- Apply the function multiplication on both sides of the equation.
+    apply Eq.mul_left_cancel₀ (show (18 : ℕ) ≠ 0 by norm_num)
+    -- Simplify the equation using numerical computation.
+    norm_num at h₀ ⊢
+  -- The solution x = 6 is correct.
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 10
+      },
+      "endPos": {
+        "line": 13,
+        "column": 29
+      },
+      "data": "invalid field notation, type is not of the form (C ...) where C is a constant\n  Eq\nhas type\n  ?m.262 \u2192 ?m.262 \u2192 Prop"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 19,
+        "column": 2
+      },
+      "endPos": {
+        "line": 19,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:16.923986
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_2647 (x : ℕ) (h₀ : 7 * 18 - x * 18 = 18) : x = 6 := by
+    -- Verify that x = 6 satisfies the equation.
+    norm_num
+  -- Use the `omega` tactic to solve the linear Diophantine equation.
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 9,
+        "column": 64
+      },
+      "endPos": {
+        "line": 11,
+        "column": 12
+      },
+      "data": "unsolved goals\nx : \u2115\nh\u2080 : 7 * 18 - x * 18 = 18\n\u22a2 x = 6"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 2
+      },
+      "endPos": {
+        "line": 13,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:16.991547
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_2647 (x : ℕ) (h₀ : 7 * 18 - x * 18 = 18) : x = 6 := by linarith
+  -- Conclude the proof by stating the value of x.
+  exact h₄
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 9,
+        "column": 67
+      },
+      "endPos": {
+        "line": 9,
+        "column": 75
+      },
+      "data": "linarith failed to find a contradiction\ncase h1.h\nx : \u2115\nh\u2080 : 7 * 18 - x * 18 = 18\na\u271d : x < 6\n\u22a2 False\nfailed"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 2
+      },
+      "endPos": {
+        "line": 11,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:16.996567
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_2647 (x : ℕ) (h₀ : 7 * 18 - x * 18 = 18) : x = 6 := by
+    apply Eq.symm
+    -- Use the given equation to solve for x by isolating it.
+    apply Eq.symm
+    -- Solve the equation using linear arithmetic.
+    linarith
+  -- Substitute the value of x back into the original equation to verify the solution.
+  rw [h₁]
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 4
+      },
+      "endPos": {
+        "line": 14,
+        "column": 12
+      },
+      "data": "linarith failed to find a contradiction\ncase h.h.h1.h\nx : \u2115\nh\u2080 : 7 * 18 - x * 18 = 18\na\u271d : x < 6\n\u22a2 False\nfailed"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 16,
+        "column": 2
+      },
+      "endPos": {
+        "line": 16,
+        "column": 4
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:17.026806
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_2647 (x : ℕ) (h₀ : 7 * 18 - x * 18 = 18) : x = 6 := by
+  -- Step 1: Apply symmetry to the equation to simplify it.
+  apply Eq.symm
+  -- Step 2: Normalize the equation by expanding and simplifying it.
+  ring_nf at h₀ ⊢
+  -- Step 3: Use the omega tactic to solve the linear Diophantine equation.
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:17.046983
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_2120 (x : ℝ) (h₀ : (x, 15) ∈ {p : ℝ × ℝ | ((p.1 - (-5)) * (p.1 - 25) + (p.2 - 0) * (p.2 - 0) = 0) ∧ p.2 = 15}) : x = 10 := by
+  -- This is where the proof would start.
+  -- Simplify the given conditions and solve for x.
+  simp_all
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 9,
+        "column": 135
+      },
+      "endPos": {
+        "line": 12,
+        "column": 10
+      },
+      "data": "unsolved goals\nx : \u211d\nh\u2080 : (x + 5) * (x - 25) + 15 * 15 = 0\n\u22a2 x = 10"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:49.149862
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25984 (n : ℕ) (h₀ : 4 * n + 37 = 6 * n + 1) : n = 18 := by
+    -- We start by applying the equality of sums lemma (Exab) to the given equation.
+    apply Eq.symm
+    -- We simplify the equation using the given equality and solve for n.
+    apply Eq.symm
+    -- We use the fact that the equation holds for all natural numbers to conclude that n must be 18.
+    apply Eq.symm
+    apply Eq.symm
+    -- We use the omega tactic to solve the equation for n.
+    omega
+  -- We have already derived the solution, so we simply use it.
+  exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 20,
+        "column": 2
+      },
+      "endPos": {
+        "line": 20,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:49.207487
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25984 (n : ℕ) (h₀ : 4 * n + 37 = 6 * n + 1) : n = 18 := by
+    -- We will use the given equation h₀ to solve for n.
+    have h₁ := h₀
+    -- Simplify the equation by eliminating the same terms on both sides.
+    omega
+  -- We have shown that n = 18, so we can conclude the proof.
+  exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 2
+      },
+      "endPos": {
+        "line": 15,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:49.212302
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25984 (n : ℕ) (h₀ : 4 * n + 37 = 6 * n + 1) : n = 18 := by
+    -- We use the given equation h₀ and simplify it step by step.
+    have h₀ := h₀
+    -- We normalize the equation by expanding and simplifying it.
+    ring_nf at h₀
+    -- We solve the simplified equation using basic arithmetic operations.
+    omega
+  -- Finally, we observe that the derived equation h₁ matches our goal.
+  observe h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 17,
+        "column": 2
+      },
+      "endPos": {
+        "line": 17,
+        "column": 9
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:49.315198
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5465 (C₁ C₂ : ℝ) (h₀ : C₁ = 2) (h₁ : C₂ = 6) (h₂ : C₂ = C₁ + 4) :
+    C₂ ∈ Set.Icc (4 : ℝ) 8 := by
+  -- Substitute the value of C₁ into the equation for C₂
+  rw [h₂, h₀] at h₁
+  -- Verify that C₂ lies within the interval [4, 8]
+  simp [h₁]
+  -- Use the constructor <;> to prove both endpoints of the interval
+  <;>
+    exact ⟨by linarith, by linarith⟩
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:49.326080
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25984 (n : ℕ) (h₀ : 4 * n + 37 = 6 * n + 1) : n = 18 := by
+    apply Eq.symm
+    -- We use the given equation h₀ to simplify and solve for n.
+    linarith
+  -- Finally, we use the derived value of n to conclude the proof.
+  simpa using h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:35:49.342228
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25984 (n : ℕ) (h₀ : 4 * n + 37 = 6 * n + 1) : n = 18 := by
+    -- First, we use linear arithmetic to simplify the equation.
+    linarith
+  -- Now, we have shown that n = 18, so we can conclude the proof.
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 2
+      },
+      "endPos": {
+        "line": 13,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:36:20.971718
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_10270 :
+  ∃ a b : ℕ → ℕ, (∀ n, a n = n) ∧ (∀ n, b n = 3 ^ n) ∧ ∀ n, b n = 3 ^ n := by
+  -- I need to finish this proof, but I'm not sure where to start.
+  -- Maybe I should think about what this theorem is stating.
+  -- It seems like it's saying there exist functions a and b from natural numbers to natural numbers such that for all n, a(n) = n and b(n) = 3^n.
+  -- So, I need to provide a proof that such functions exist, and perhaps show that b(n) = 3^n.
+  -- But it also has a repeated part: "∀ n, b n = 3 ^ n." Is that redundant? Maybe it's a typo.
+  -- For now, I'll assume that the theorem is to show that for these functions a and b, certain properties hold, specifically a(n) = n and b(n) = 3^n.
+  -- To prove this, I could use the Aesop tactic, which is a built-in tactic in Lean4 for handling "standard" cases.
+  -- Aesop often simplifies goals, solves them directly, or applies known lemmas and theorems.
+  -- But since a(n) = n is straightforward, maybe Aesop can handle it.
+  -- I'll try to apply Aesop and see if it finishes the proof.
+  <;> aesop
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 10,
+        "column": 77
+      },
+      "endPos": {
+        "line": 21,
+        "column": 5
+      },
+      "data": "unexpected token '<;>'; expected '{' or tactic"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 10,
+        "column": 75
+      },
+      "endPos": {
+        "line": 10,
+        "column": 77
+      },
+      "data": "unsolved goals\n\u22a2 \u2203 a b, (\u2200 (n : \u2115), a n = n) \u2227 (\u2200 (n : \u2115), b n = 3 ^ n) \u2227 \u2200 (n : \u2115), b n = 3 ^ n"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:36:21.151702
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_23642 (A b h : ℝ) (h₀ : A = 600) (h₁ : b = 30) (h₂ : A = 1/2 * b * h) :
+    h = 40 := by
+  -- Substitute the given values into the area formula
+  rw [h₀, h₁] at h₂
+  -- Simplify the equation to isolate h
+  rw [eq_comm] at h₂
+  -- Solve for h using basic arithmetic operations
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:36:21.214714
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_23642 (A b h : ℝ) (h₀ : A = 600) (h₁ : b = 30) (h₂ : A = 1/2 * b * h) :
+    h = 40 := by
+  -- We start by substituting the given values for A and b into the area formula.
+  rw [h₀] at h₂
+  rw [h₁] at h₂
+  -- Simplify the equation by removing the fractions and performing the multiplication.
+  field_simp at h₂
+  -- Solve for h by isolating it on one side of the equation.
+  linarith
+  -- Verify the solution by checking that the values satisfy the original equation.
+  <;> linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:37:15.488264
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_23139 :
+    (∃ n : ℕ, n > 0 ∧ (∃ k : ℕ, k > 0 ∧ n * k = 48)) ↔ ∃ n : ℕ, n > 0 ∧ (∃ k : ℕ, k > 0 ∧ n * k = 48) ∧
+      (∃ n : ℕ, n > 0 ∧ (∃ k : ℕ, k > 0 ∧ n * k = 48)) ∧
+      (∃ n : ℕ, n > 0 ∧ (∃ k : ℕ, k > 0 ∧ n * k = 48)) ∧
+      (∃ n : ℕ, n > 0 ∧ (∃ k : ℕ, k > 0 ∧ n * k = 48)) := by
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 60
+      },
+      "endPos": null,
+      "data": "unexpected end of input; expected '{'"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 58
+      },
+      "endPos": {
+        "line": 13,
+        "column": 60
+      },
+      "data": "unsolved goals\n\u22a2 (\u2203 n > 0, \u2203 k > 0, n * k = 48) \u2194\n    \u2203 n > 0,\n      (\u2203 k > 0, n * k = 48) \u2227\n        (\u2203 n > 0, \u2203 k > 0, n * k = 48) \u2227 (\u2203 n > 0, \u2203 k > 0, n * k = 48) \u2227 \u2203 n > 0, \u2203 k > 0, n * k = 48"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:37:47.317145
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_24081 (a : ℕ) (h₀ : a % 6 = 5) (h₁ : a / 6 = 80) : a = 485 := by
+    -- We use the division algorithm to express `a` in terms of the quotient and remainder.
+    -- Given `a % 6 = 5`, we know the remainder when `a` is divided by 6 is 5.
+    -- Given `a / 6 = 80`, we know the quotient when `a` is divided by 6 is 80.
+    -- Therefore, `a = 6 * 80 + 5`.
+    linarith
+  -- Now we substitute `a = 6 * 80 + 5` into the equation and simplify to find the value of `a`.
+  rw [h]
+  norm_num
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 4
+      },
+      "endPos": {
+        "line": 14,
+        "column": 12
+      },
+      "data": "linarith failed to find a contradiction\ncase h1.h\na : \u2115\nh\u2080 : a % 6 = 5\nh\u2081 : a / 6 = 80\na\u271d : a < 485\n\u22a2 False\nfailed"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 16,
+        "column": 2
+      },
+      "endPos": {
+        "line": 16,
+        "column": 4
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:37:47.433611
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_9412 : Nat.minFac 192 = 2 ∧ 192 % 2 = 0 ∧ 192 / 2 = 96 ∧ 96 % 2 = 0 ∧ 96 / 2 = 48 ∧ 48 % 2 = 0 ∧ 48 / 2 = 24 ∧ 24 % 2 = 0 ∧ 24 / 2 = 12 ∧ 12 % 2 = 0 ∧ 12 / 2 = 6 ∧ 6 % 2 = 0 ∧ 6 / 2 = 3 ∧ 3 % 2 = 1 ∧ 3 / 2 = 1 ∧ 1 % 2 = 1 ∧ 1 / 2 = 0 := by
+  constructor <;> norm_num
+  <;> decide
+  <;> decide
+  <;> decide
+  <;> decide
+  <;> decide
+  <;> decide
+  <;> decide
+  <;> decide
+  <;> decide
+  <;> decide
+  <;> decide
+  <;> decide
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+Not found
+
+==================================================
+Timestamp: 2025-02-28 16:38:19.232274
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_19439 (milk chocolate_powder : ℝ) (h₀ : milk = 130) (h₁ : chocolate_powder = 60) :
+  let cups := min (milk / 6.5) (chocolate_powder / 1.5);
+  let ounces := cups * 8;
+  ounces = 160 := by
+  -- Simplify the expressions by substituting the given values and performing arithmetic operations.
+  simp [h₀, h₁, div_eq_mul_inv, mul_assoc, mul_comm, mul_left_comm, min_eq_left, Nat.cast_ofNat] at *
+  -- Perform the final arithmetic operation to verify the result.
+  norm_num
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:38:51.860941
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5780 (x y : ℝ) (h₀ : x ^ 2 + y ^ 2 = 1) :
+  (x + y) ^ 2 = 1 + 2 * x * y := by
+  -- Expand the square of the binomial (x + y)^2
+  rw [sq, sq]
+  -- Simplify the expression using algebraic properties
+  simp [add_sq, mul_add, mul_comm, mul_left_comm, h₀, add_assoc, add_left_comm]
+  -- Use the ring tactic to simplify the expression to the desired form
+  ring
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 10
+      },
+      "endPos": {
+        "line": 12,
+        "column": 12
+      },
+      "data": "tactic 'rewrite' failed, did not find instance of the pattern in the target expression\n  ?a ^ 2\nx y : \u211d\nh\u2080 : x ^ 2 + y ^ 2 = 1\n\u22a2 (x + y) * (x + y) = 1 + 2 * x * y"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:38:51.908593
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25189 (country : ℕ) (rock : ℕ) (classical : ℕ) (h₀ : country = rock + 3) (h₁ : rock = 2 * classical) (h₂ : country = 23) : classical = 10 := by omega
+  -- The final result is classical = 10.
+  exact h₅
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 2
+      },
+      "endPos": {
+        "line": 11,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:38:51.908591
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25189 (country : ℕ) (rock : ℕ) (classical : ℕ) (h₀ : country = rock + 3) (h₁ : rock = 2 * classical) (h₂ : country = 23) : classical = 10 := by
+    -- Use the `omega` tactic to solve the linear equation.
+    omega
+  -- The final result is `classical = 10`.
+  exact h₃
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 2
+      },
+      "endPos": {
+        "line": 13,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:38:52.158166
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5780 (x y : ℝ) (h₀ : x ^ 2 + y ^ 2 = 1) :
+  (x + y) ^ 2 = 1 + 2 * x * y := by
+  -- Start by expanding (x + y)^2 and simplifying using the given condition.
+  simp [sq, mul_add, add_mul, mul_comm, mul_left_comm]
+  -- Use linear arithmetic to substitute and simplify the expression to achieve the desired form.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:38:52.477249
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5780 (x y : ℝ) (h₀ : x ^ 2 + y ^ 2 = 1) :
+  (x + y) ^ 2 = 1 + 2 * x * y := by
+  -- Start by expanding the left-hand side using the distributive property.
+  simp_all only [sq, mul_add, mul_comm, mul_left_comm, mul_assoc]
+  -- Simplify the expanded expression by combining like terms and using the given equation `h₀`.
+  nlinarith [sq_nonneg (x + y), h₀]
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:39:23.888558
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_22437 (x : ℝ) (h : x = 2) (n : ℕ) (h₀ : n = 4) :
+  let f := fun (x : ℝ) => x ^ 2;
+  f (f (f (f x))) > 500 := by
+  -- Define the function f(x) = x^2
+  let f := fun (x : ℝ) => x ^ 2
+  -- Apply the function four times to x = 2 and simplify
+  simp only [f, h, h₀, pow_two, Nat.cast_ofNat]
+  -- Normalize the numerical expression to confirm the result
+  norm_num
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:39:56.034212
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_8177 (x y : ℕ) (h₀ : x + y = 48) (h₁ : x = 3 * y) : x = 36 ∧ y = 12 := by
+    -- Substitute x = 36 into the equation x + y = 48
+    rw [h₂] at h₀
+    -- Simplify the equation to 36 + y = 48
+    linarith
+  -- Combine the results into a single theorem
+  exact ⟨h₂, h₃⟩
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 8
+      },
+      "endPos": {
+        "line": 11,
+        "column": 10
+      },
+      "data": "unknown identifier 'h\u2082'"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 8
+      },
+      "endPos": {
+        "line": 11,
+        "column": 10
+      },
+      "data": "tactic 'rewrite' failed, equality or iff proof expected\n  ?m.201\nx y : \u2115\nh\u2080 : x + y = 48\nh\u2081 : x = 3 * y\n\u22a2 x = 36 \u2227 y = 12"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 2
+      },
+      "endPos": {
+        "line": 15,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:39:56.078084
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_19913 (total_apples : ℕ) (children : ℕ) (apples_per_child : ℕ) (adults : ℕ)
+  (h₀ : total_apples = 450) (h₁ : children = 33) (h₂ : apples_per_child = x)
+  (h₃ : adults = 40) (h₄ : total_apples = children * apples_per_child + adults * 3) :
+  x = 10 := by
+  -- Substitute the given values into the equation.
+  subst_vars
+  -- Use the `omega` tactic to solve the linear equation.
+  omega
+  -- Use `linarith` to handle any remaining arithmetic simplifications.
+  <;> linarith
+  -- Use `omega` again to ensure the solution is correct.
+  <;> omega
+  -- Final `linarith` to confirm the solution.
+  <;> linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:39:56.274754
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_19913 (total_apples : ℕ) (children : ℕ) (apples_per_child : ℕ) (adults : ℕ)
+  (h₀ : total_apples = 450) (h₁ : children = 33) (h₂ : apples_per_child = x)
+  (h₃ : adults = 40) (h₄ : total_apples = children * apples_per_child + adults * 3) :
+  x = 10 := by
+  -- Substitute the given values into the equation
+  simp only [h₀, h₁, h₂, h₃, h₄] at *
+  -- Simplify the equation using arithmetic operations
+  norm_num
+  -- Solve for x using linear arithmetic
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:40:29.311920
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_24451 (deskPrice : ℕ) (chairPrice : ℕ) (h₀ : deskPrice = 480) (h₁ : 5 * chairPrice = deskPrice + 60) :
+    chairPrice = 108 := by
+  -- Assign the given desk price to a variable
+  have h₀ : deskPrice = 480 := h₀
+  -- Simplify the given equation using the assigned desk price
+  simp_all only [h₀, Nat.mul_add, Nat.add_mul, Nat.mul_one, Nat.mul_zero, Nat.add_zero]
+  -- Use the omega tactic to solve the resulting linear equation
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:40:29.313844
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_24451 (deskPrice : ℕ) (chairPrice : ℕ) (h₀ : deskPrice = 480) (h₁ : 5 * chairPrice = deskPrice + 60) :
+    chairPrice = 108 := by
+    -- Use the omega tactic to solve the linear equation.
+    omega
+  -- Conclude the proof by stating the result.
+  exact h₂
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:40:29.320883
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_24451 (deskPrice : ℕ) (chairPrice : ℕ) (h₀ : deskPrice = 480) (h₁ : 5 * chairPrice = deskPrice + 60) :
+    chairPrice = 108 := by
+    -- We use the `omega` tactic to solve the linear equation 5 * chairPrice = 540.
+    omega
+  -- The `omega` tactic provides the solution chairPrice = 108, which we conclude the proof with.
+  exact h₂
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:40:29.327600
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_24451 (deskPrice : ℕ) (chairPrice : ℕ) (h₀ : deskPrice = 480) (h₁ : 5 * chairPrice = deskPrice + 60) :
+    chairPrice = 108 := by
+    -- Use the `omega` tactic to solve the linear equation.
+    omega
+  -- The final result is chairPrice = 108.
+  exact h₂
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:40:29.332969
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_24451 (deskPrice : ℕ) (chairPrice : ℕ) (h₀ : deskPrice = 480) (h₁ : 5 * chairPrice = deskPrice + 60) :
+    chairPrice = 108 := by
+  -- Substitute the known value of deskPrice into the equation.
+  rw [h₀] at h₁
+  -- Simplify the equation by performing the arithmetic operation.
+  norm_num at h₁
+  -- Solve for chairPrice by isolating it on one side of the equation.
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:41:00.867728
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25451 (A B : ℕ) (h : A = 2 * B) (h' : A = 32) : A + B = 48 := by
+  -- Substitute the value of A from h' into h
+  rw [h'] at h
+  -- Simplify the equation to find B
+  norm_num at h
+  -- Solve for A + B using the values of A and B
+  norm_num [h]
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 9,
+        "column": 74
+      },
+      "endPos": {
+        "line": 15,
+        "column": 14
+      },
+      "data": "unsolved goals\nA B : \u2115\nh : 32 = 2 * B\nh' : A = 32\n\u22a2 A + B = 48"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:41:32.711318
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_11809 (total_fruits : ℕ) (mangoes : ℕ) (pears : ℕ) (pawpaws : ℕ) (kiwis : ℕ) (lemons : ℕ)
+  (h₀ : total_fruits = 58) (h₁ : mangoes = 18) (h₂ : pears = 10) (h₃ : pawpaws = 12) (h₄ : kiwis = lemons)
+  (h₅ : total_fruits = mangoes + pears + pawpaws + 2 * lemons) : lemons = 9 := by
+  -- Substitute the known values into the equation for total fruits.
+  simp_all only [h₁, h₂, h₃, h₄]
+  -- Simplify the equation to isolate lemons.
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:41:32.873691
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_9052 (gloves : ℕ) (bats : ℕ) (h₀ : gloves = 1 + 7 * bats) (h₁ : gloves = 29) : bats = 4 := by
+    linarith
+  -- Conclusion: Therefore, the number of bats is 4.
+  exact h₃
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 2
+      },
+      "endPos": {
+        "line": 12,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:41:32.889451
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_9052 (gloves : ℕ) (bats : ℕ) (h₀ : gloves = 1 + 7 * bats) (h₁ : gloves = 29) : bats = 4 := by linarith
+  -- Conclude the proof
+  exact h₂
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 2
+      },
+      "endPos": {
+        "line": 11,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:42:06.951176
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_7713 : (Nat.factorial 4 - Nat.factorial 1) / 23 = 1 → Nat.factorial 4 / 23 = 1 := by
+  -- Assume the given equation (Nat.factorial 4 - Nat.factorial 1) / 23 = 1
+  intro h
+  -- Simplify the equation using numerical computations
+  norm_num [Nat.factorial] at h ⊢
+  -- Use the omega tactic to solve the linear arithmetic problem
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 2
+      },
+      "endPos": {
+        "line": 15,
+        "column": 7
+      },
+      "data": "no goals to be solved"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:42:07.390826
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_27254 (f : ℝ → ℝ) (h₀ : ∀ x, f x = x ^ 2) : 
+  (∀ x, f x = f (x ^ 2)) ∧ (∀ x, f x = f (f x)) ∧ (∀ x, f x = x ^ 2) → 
+  (∀ x, f x = f (x ^ 2)) ∧ (∀ x, f x = f (f x)) ∧ (∀ x, f x = x ^ 2) := by
+  intro h -- Introduce the assumption h
+  exact ⟨fun x ↦ by aesop, fun x ↦ by aesop, fun x ↦ by aesop⟩
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 20
+      },
+      "endPos": {
+        "line": 13,
+        "column": 25
+      },
+      "data": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 38
+      },
+      "endPos": {
+        "line": 13,
+        "column": 43
+      },
+      "data": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 56
+      },
+      "endPos": {
+        "line": 13,
+        "column": 61
+      },
+      "data": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:42:37.677779
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_9542 (A : Type) [CommRing A] (a b c : A) (h₀ : a * b * c = 0) :
+    a * b * c - a * c * b = 0 := by
+    -- Use the commutative property of multiplication to swap `c` and `b`.
+    rw [mul_comm c b]
+  -- Substitute `a * b * c` for `a * c * b` in the original equation.
+  rw [h₁]
+  -- Simplify the expression using the given equation `a * b * c = 0`.
+  simp [h₀]
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 8
+      },
+      "endPos": {
+        "line": 12,
+        "column": 20
+      },
+      "data": "tactic 'rewrite' failed, did not find instance of the pattern in the target expression\n  c * b\nA : Type\ninst\u271d : CommRing A\na b c : A\nh\u2080 : a * b * c = 0\n\u22a2 a * b * c - a * c * b = 0"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 4
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:43:06.995604
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_19342 (x : ℝ)
+    (h₀ : 60 * x - 30 * (20 - x) = 660) : x ≠ 6 := by
+  -- Assume for contradiction that x = 6
+  intro h
+  -- Substitute x = 6 into the equation
+  rw [h] at h₀
+  -- Simplify the equation with x = 6
+  norm_num at h₀
+  -- This will result in a contradiction, showing that x cannot be 6
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 18,
+        "column": 2
+      },
+      "endPos": {
+        "line": 18,
+        "column": 10
+      },
+      "data": "no goals to be solved"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:43:07.023526
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_12908 (length : ℝ) (breadth : ℝ) (h₀ : length = 3 * breadth) (h₁ : 2 * length + 2 * breadth = 96) :
+    length * breadth = 432 := by
+    linarith
+  -- Substitute the value of breadth back into the expression for length.
+  rw [h₀, h₂]
+  -- Calculate the area by multiplying the length and breadth.
+  ring
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 4
+      },
+      "endPos": {
+        "line": 11,
+        "column": 12
+      },
+      "data": "linarith failed to find a contradiction\ncase h1.h\nlength breadth : \u211d\nh\u2080 : length = 3 * breadth\nh\u2081 : 2 * length + 2 * breadth = 96\na\u271d : length * breadth < 432\n\u22a2 False\nfailed"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 2
+      },
+      "endPos": {
+        "line": 13,
+        "column": 4
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:43:07.099283
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_17098 (x y : ℝ) (h : x^2 + x + 4 = y - 4) (hx : x = -7) : y = 50 := by
+  -- Substitute \( x = -7 \) into the equation.
+  rw [hx] at h
+  -- Simplify the equation using numerical computations.
+  norm_num at h
+  -- Solve for \( y \) using linear arithmetic.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:43:07.100249
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_17098 (x y : ℝ) (h : x^2 + x + 4 = y - 4) (hx : x = -7) : y = 50 := by
+  -- Substitute x = -7 into the equation x^2 + x + 4 = y - 4
+  rw [hx] at h
+  -- Simplify the equation with the substituted value
+  norm_num at h
+  -- Solve for y using linear arithmetic
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:43:07.131465
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_17098 (x y : ℝ) (h : x^2 + x + 4 = y - 4) (hx : x = -7) : y = 50 := by
+  -- Substitute \( x = -7 \) into the equation and simplify.
+  rw [hx] at h
+  -- Normalize the equation by expanding and simplifying it.
+  ring_nf at h
+  -- Use linear arithmetic to solve for \( y \).
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:43:38.632779
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_26932 (d b s : ℕ) (h₀ : d = 3 * b) (h₁ : b = 2 * s) (h₂ : d + b + s = 27) : d = 18 := by
+  -- Substitute the known value of `b` from `h₁` into `h₀` and `h₂`.
+  rw [h₁] at h₀ h₂
+  -- Simplify the expressions by performing arithmetic operations.
+  norm_num at h₀ h₂
+  -- Use the `omega` tactic to solve the resulting system of linear equations.
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:43:39.599800
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_8783 :
+  ∀ (s : Finset ℕ) (h₀ : ∀ x : ℕ, x ∈ s ↔ x ∈ ({1} : Finset ℕ)),
+    ∀ (t : Finset ℕ) (h₁ : ∀ x : ℕ, x ∈ t ↔ x ∈ ({10, 10^2, 10^3, 10^4, 10^5, 10^6, 10^7, 10^8, 10^9, 10^10} : Finset ℕ)),
+      ∀ (x : ℕ) (h₂ : x ∈ s ∪ t), x ≠ 0 → (∃ (k : ℕ), k ∈ s ∪ t ∧ k ≠ 0 ∧ k ∉ s ∧ k ∉ t) → 9 = 9 := by
+  intro s h₀ t h₁ x h₂ hx h₃
+  simp_all
+  <;> omega
+  <;> aesop
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:44:11.604092
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_11403 (points_scored_by_panthers points_scored_by_cougars : ℕ)
+  (h₀ : points_scored_by_panthers + points_scored_by_cougars = 34) (h₁ : points_scored_by_cougars - points_scored_by_panthers = 14) :
+  points_scored_by_panthers = 10 := by
+  -- Define the points scored by the Panthers as 'a'.
+  have : points_scored_by_panthers + points_scored_by_cougars = 34 := h₀
+  have : points_scored_by_cougars - points_scored_by_panthers = 14 := h₁
+  -- Use the 'omega' tactic to solve the system of linear equations.
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:44:11.622590
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_6401 (n : ℤ) (h : n % 3 = 1) : (n + 1) % 3 = 2 := by
+  -- Use the `omega` tactic to solve the linear congruence problem.
+  omega
+  -- `omega` will automatically handle the arithmetic and congruence properties, confirming that (n + 1) % 3 = 2.
+  <;> simp [h]
+  -- Simplify the expression using the given hypothesis `h`.
+  <;> omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:44:11.711744
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5335 (x : ℝ) (h₀ : x / 2 = 2900) : x = 5800 := by
+    -- Multiply both sides of the equation by 2 to isolate x
+    apply Eq.symm
+    -- Use the given condition to simplify the equation
+    linarith
+  -- Finally, we use the derived value of x to conclude the proof
+  exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 2
+      },
+      "endPos": {
+        "line": 15,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:44:11.714775
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5335 (x : ℝ) (h₀ : x / 2 = 2900) : x = 5800 := by
+        -- To isolate x, we multiply both sides of the equation by 2.
+        apply Eq.symm
+        -- This line uses the symmetry of equality to show that if x / 2 = 2900, then 5800 = x.
+        apply Eq.symm
+        -- This line applies the symmetry of equality again to show that if 5800 = x, then x = 5800.
+        linarith
+    -- Finally, we have shown that x = 5800.
+    exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 17,
+        "column": 4
+      },
+      "endPos": {
+        "line": 17,
+        "column": 9
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:44:11.716229
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5335 (x : ℝ) (h₀ : x / 2 = 2900) : x = 5800 := by
+    -- Multiply both sides by 2 to eliminate the division by 2.
+    apply Eq.symm
+    -- Simplify the equation by performing the multiplication.
+    linarith
+  -- The final result is x = 5800.
+  exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 2
+      },
+      "endPos": {
+        "line": 15,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:44:11.718643
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5335 (x : ℝ) (h₀ : x / 2 = 2900) : x = 5800 := by
+    -- Multiply both sides by 2 to reverse the division.
+    rw [← mul_right_inj' (two_ne_zero' ℝ)] at h₀
+    -- Simplify the equation using field operations.
+    field_simp at h₀ ⊢
+    -- Solve the equation using linear arithmetic.
+    linarith
+  -- The final answer is x = 5800.
+  exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 17,
+        "column": 2
+      },
+      "endPos": {
+        "line": 17,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:44:11.734607
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5335 (x : ℝ) (h₀ : x / 2 = 2900) : x = 5800 := by
+    -- Step 2: Isolate the variable x by multiplying both sides by 2
+    apply Eq.symm
+    -- Step 3: Simplify both sides and perform the multiplication
+    linarith [h₀]
+  -- Step 4: Conclude the proof
+  exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 2
+      },
+      "endPos": {
+        "line": 15,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:44:11.810233
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_26384 (x : ℝ) (h₀ : 5 * 20 * (x / 100) = 25) : x = 25 := by
+  -- Simplify the equation by clearing denominators.
+  field_simp at h₀
+  -- Normalize the equation by expanding and simplifying it.
+  ring_nf at h₀ ⊢
+  -- Use linear arithmetic to solve for x.
+  linarith
+  -- Additional linear arithmetic to ensure the solution is correct.
+  <;> linarith
+  <;> linarith
+  <;> linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:11.704886
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_24037 (milton_zoology : ℕ) (milton_botany : ℕ)
+  (h₀ : milton_zoology + milton_botany = 80)
+  (h₁ : milton_zoology = 4 * milton_botany) : milton_zoology = 64 := by
+    omega
+  -- Simplify the equation to find the value of milton_zoology.
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:11.844604
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_17331 (angle_ACT angle_ATC angle_CAT : ℝ)
+  (h₀ : angle_ACT = angle_ATC) (h₁ : angle_CAT = 36) (h₂ : angle_ACT + angle_ATC + angle_CAT = 180) :
+  angle_ATC = 72 := by linarith
+  -- Solve for angle_ATC using linear arithmetic
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 2
+      },
+      "endPos": {
+        "line": 13,
+        "column": 10
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:11.848292
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_17331 (angle_ACT angle_ATC angle_CAT : ℝ)
+  (h₀ : angle_ACT = angle_ATC) (h₁ : angle_CAT = 36) (h₂ : angle_ACT + angle_ATC + angle_CAT = 180) :
+  angle_ATC = 72 := by
+  -- Rewrites the given equation angle_ACT = angle_ATC to help in solving.
+  rw [← sub_eq_zero] at h₀
+  -- Simplifies the equation using basic arithmetic operations.
+  ring_nf at h₀ ⊢
+  -- Uses linear arithmetic to solve for angle_ATC.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:11.858971
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_17331 (angle_ACT angle_ATC angle_CAT : ℝ)
+  (h₀ : angle_ACT = angle_ATC) (h₁ : angle_CAT = 36) (h₂ : angle_ACT + angle_ATC + angle_CAT = 180) :
+  angle_ATC = 72 := by
+  -- Simplify the given equality by substituting the known values and solving for the unknown angle.
+  simp only [add_assoc, add_comm, add_left_comm] at h₂
+  -- Use linear arithmetic to solve for the unknown angle.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:11.905206
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_24037 (milton_zoology : ℕ) (milton_botany : ℕ)
+  (h₀ : milton_zoology + milton_botany = 80)
+  (h₁ : milton_zoology = 4 * milton_botany) : milton_zoology = 64 := by
+    linarith
+  -- Substitute the value of `milton_botany` back into the expression for `milton_zoology`.
+  rw [h₂] at h₁
+  -- Calculate the number of beetles.
+  -- milton_zoology = 4 * 16 = 64
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 4
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:11.925788
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_24037 (milton_zoology : ℕ) (milton_botany : ℕ)
+  (h₀ : milton_zoology + milton_botany = 80)
+  (h₁ : milton_zoology = 4 * milton_botany) : milton_zoology = 64 := by linarith
+  -- Substitute the value of `milton_botany` back into the expression for `milton_zoology`.
+  rw [h₃] at h₁
+  -- Finally, we find that the number of plants in the zology class is 64.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 2
+      },
+      "endPos": {
+        "line": 13,
+        "column": 4
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:43.887375
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25456 (YZ XY : ℝ) (h₀ : YZ > 0) (h₁ : XY > 0) (h₂ : YZ = 30) (h₃ : XY / YZ = 4 / 3) : XY = 40 := by
+  -- Convert the division in the hypothesis to multiplication by the inverse
+  rw [div_eq_iff (h₀)]
+  -- Simplify the equation using the given value of YZ
+  simp_all only [mul_div_cancel_left]
+  -- Use linear arithmetic to solve for XY
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 17
+      },
+      "endPos": {
+        "line": 11,
+        "column": 21
+      },
+      "data": "application type mismatch\n  div_eq_iff h\u2080\nargument\n  h\u2080\nhas type\n  YZ > 0 : Prop\nbut is expected to have type\n  ?m.338 \u2260 0 : Prop"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 6
+      },
+      "endPos": {
+        "line": 11,
+        "column": 21
+      },
+      "data": "tactic 'rewrite' failed, did not find instance of the pattern in the target expression\n  ?m.337 / ?m.338 = ?m.339\nYZ XY : \u211d\nh\u2080 : YZ > 0\nh\u2081 : XY > 0\nh\u2082 : YZ = 30\nh\u2083 : XY / YZ = 4 / 3\n\u22a2 XY = 40"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:43.887374
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25456 (YZ XY : ℝ) (h₀ : YZ > 0) (h₁ : XY > 0) (h₂ : YZ = 30) (h₃ : XY / YZ = 4 / 3) : XY = 40 := by
+    -- Step 4: Perform the multiplication and solve for XY
+    field_simp [h₀.ne', h₂.ne'] at this ⊢
+    linarith
+  -- Step 5: Conclude the proof by exact reasoning
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 24
+      },
+      "endPos": {
+        "line": 11,
+        "column": 30
+      },
+      "data": "invalid field 'ne'', the environment does not contain 'Eq.ne''\n  h\u2082\nhas type\n  YZ = 30"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 35
+      },
+      "endPos": {
+        "line": 11,
+        "column": 39
+      },
+      "data": "unknown identifier 'this'"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:44.181850
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25456 (YZ XY : ℝ) (h₀ : YZ > 0) (h₁ : XY > 0) (h₂ : YZ = 30) (h₃ : XY / YZ = 4 / 3) : XY = 40 := by
+    -- Substitute YZ = 30 into the ratio XY / YZ = 4 / 3.
+    rw [h₂] at h₃
+    -- Simplify the equation XY / 30 = 4 / 3 to find XY.
+    field_simp at h₃
+    -- Solve for XY by multiplying both sides by 30.
+    linarith
+  -- Conclude that XY = 40.
+  exact h₄
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 17,
+        "column": 2
+      },
+      "endPos": {
+        "line": 17,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:44.189119
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25456 (YZ XY : ℝ) (h₀ : YZ > 0) (h₁ : XY > 0) (h₂ : YZ = 30) (h₃ : XY / YZ = 4 / 3) : XY = 40 := by
+    -- Clear the denominator by multiplying both sides by YZ.
+    field_simp [this, h₀, h₁] at h₃ ⊢
+    -- Use linear arithmetic to solve for XY.
+    linarith
+  -- The final result is XY = 40.
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 16
+      },
+      "endPos": {
+        "line": 11,
+        "column": 20
+      },
+      "data": "unknown identifier 'this'"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 2
+      },
+      "endPos": {
+        "line": 15,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:45:44.199307
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25456 (YZ XY : ℝ) (h₀ : YZ > 0) (h₁ : XY > 0) (h₂ : YZ = 30) (h₃ : XY / YZ = 4 / 3) : XY = 40 := by
+  -- Simplify the equation by clearing denominators and using field_simp to handle the division.
+  field_simp [h₀.ne', h₁.ne'] at h₃
+  -- Use linarith to solve the resulting linear equation.
+  linarith
+  -- Use linarith again to ensure the solution is consistent with the given conditions.
+  <;> linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:16.372161
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_6598 (x : ℝ) (h₀ : 2 * (20 * x) = 38400) : x = 960 := by
+  -- Simplify the equation by multiplying the constants.
+  simp_all only [mul_assoc, mul_comm, mul_left_comm]
+  -- Isolate `x` by dividing both sides of the equation by 40.
+  rw [eq_comm] at h₀ ⊢
+  apply_fun fun x => x / 40 at h₀
+  ring_nf at h₀ ⊢
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:16.688940
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20571 (h₀ : 27 + 2 * x = 39) : x = 6 := by linarith
+  -- Step 4: Verify the solution by substituting x back into the original equation
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 2
+      },
+      "endPos": {
+        "line": 11,
+        "column": 10
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:16.692363
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20571 (h₀ : 27 + 2 * x = 39) : x = 6 := by
+    -- Divide both sides by 2 to get x = 6.
+    linarith
+  -- Finally, we use the derived value of x to conclude the proof.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 2
+      },
+      "endPos": {
+        "line": 13,
+        "column": 10
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:16.700143
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20571 (h₀ : 27 + 2 * x = 39) : x = 6 := by
+    -- First, subtract 27 from both sides to isolate the term with x.
+    apply Eq.symm
+    -- Use the symmetric property of equality to show that 2x = 12.
+    linarith
+  -- The solutions are the same, so we can conclude x = 6.
+  exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 2
+      },
+      "endPos": {
+        "line": 15,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:16.706779
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20571 (h₀ : 27 + 2 * x = 39) : x = 6 := by
+    -- Apply the subtraction of 27 to both sides to simplify the equation.
+    apply Eq.symm
+    linarith
+  -- The above step solves the equation and gives x = 6.
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:16.706922
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20571 (h₀ : 27 + 2 * x = 39) : x = 6 := by
+      linarith -- This command simplifies the equation 27 + 2x = 39 to 2x = 12.
+    -- Next, we solve for x by dividing both sides by 2.
+    linarith
+  -- Finally, we conclude that x = 6.
+  exact hx
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 4
+      },
+      "endPos": {
+        "line": 12,
+        "column": 12
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:16.712840
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20571 (h₀ : 27 + 2 * x = 39) : x = 6 := by
+    linarith
+  -- Step 3: The equation holds true, confirming that \( x = 6 \) is the correct solution.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 2
+      },
+      "endPos": {
+        "line": 12,
+        "column": 10
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:16.717043
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20571 (h₀ : 27 + 2 * x = 39) : x = 6 := by linarith
+    exact h₂
+  -- Now we have x = 6, which is our solution.
+  exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 10,
+        "column": 4
+      },
+      "endPos": {
+        "line": 10,
+        "column": 9
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:16.726821
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20571 (h₀ : 27 + 2 * x = 39) : x = 6 := by linarith
+  -- Conclude the proof by exact equality.
+  exact h₃
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 2
+      },
+      "endPos": {
+        "line": 11,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+Not found
+
+==================================================
+Timestamp: 2025-02-28 16:46:49.135485
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_15560 (d : ℕ) :
+  (∃ (rotation : ℕ → ℕ) (reflection : ℕ → ℕ),
+    ∀ (x : ℕ), rotation x = x ∧ reflection x = x) ∧
+  ∃ (rotation : ℕ → ℕ) (reflection : ℕ → ℕ),
+    ∀ (x : ℕ), rotation x = x ∧ reflection x = x := by
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 54
+      },
+      "endPos": null,
+      "data": "unexpected end of input; expected '{'"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 52
+      },
+      "endPos": {
+        "line": 13,
+        "column": 54
+      },
+      "data": "unsolved goals\nd : \u2115\n\u22a2 (\u2203 rotation reflection, \u2200 (x : \u2115), rotation x = x \u2227 reflection x = x) \u2227\n    \u2203 rotation reflection, \u2200 (x : \u2115), rotation x = x \u2227 reflection x = x"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:49.138401
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16617 (x : ℕ) (h₀ : 16 * x = 26 * 32) : x = 52 := by
+    apply Eq.symm
+    apply Eq.symm
+    norm_num
+  -- Final answer: x = 52
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 9,
+        "column": 62
+      },
+      "endPos": {
+        "line": 12,
+        "column": 12
+      },
+      "data": "unsolved goals\ncase h.h\nx : \u2115\nh\u2080 : 16 * x = 26 * 32\n\u22a2 x = 52"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 2
+      },
+      "endPos": {
+        "line": 14,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:49.144993
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16617 (x : ℕ) (h₀ : 16 * x = 26 * 32) : x = 52 := by
+    apply Eq.symm
+    -- Use the division property to isolate x
+    apply Nat.eq_of_mul_eq_mul_right (show 16 ≠ 0 by decide)
+    -- Perform the division and simplify
+    linarith
+  -- Conclude the proof by stating the value of x
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 38
+      },
+      "endPos": {
+        "line": 12,
+        "column": 59
+      },
+      "data": "type mismatch\n  this\nhas type\n  16 \u2260 0 : Prop\nbut is expected to have type\n  0 < ?m.197 : Prop"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 16,
+        "column": 2
+      },
+      "endPos": {
+        "line": 16,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:49.152789
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16617 (x : ℕ) (h₀ : 16 * x = 26 * 32) : x = 52 := by
+  -- Apply the symmetry of equality to get the equation in the form of 26 * 32 = 16 * x
+  apply Eq.symm
+  -- Rewrite the equation to prepare for numerical verification
+  rw [← mul_right_inj' (show (16 : ℕ) ≠ 0 by decide), mul_assoc]
+  -- Normalize the numbers to confirm the equality
+  norm_num
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 54
+      },
+      "endPos": {
+        "line": 13,
+        "column": 63
+      },
+      "data": "tactic 'rewrite' failed, did not find instance of the pattern in the target expression\n  ?a * ?b * ?c\ncase h\nx : \u2115\nh\u2080 : 16 * x = 26 * 32\n\u22a2 16 * 52 = 16 * x"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:49.209828
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16617 (x : ℕ) (h₀ : 16 * x = 26 * 32) : x = 52 := by
+  -- Step 1: Calculate the product 26 * 32
+  norm_num at h₀ ⊢
+  -- Step 2: Solve for x by dividing both sides of the equation by 16
+  apply Eq.symm
+  -- Use the omega tactic to solve the equation for x
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:49.218344
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16617 (x : ℕ) (h₀ : 16 * x = 26 * 32) : x = 52 := by simp_all
+    -- Now, we need to solve for x by dividing both sides by 16
+    apply Eq.symm
+    -- Performing the division to find the value of x
+    norm_num
+  -- Finally, we have determined that x = 52
+  simp_all
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 9,
+        "column": 62
+      },
+      "endPos": {
+        "line": 9,
+        "column": 73
+      },
+      "data": "unsolved goals\nx : \u2115\nh\u2080 : 16 * x = 832\n\u22a2 x = 52"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 4
+      },
+      "endPos": {
+        "line": 11,
+        "column": 9
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:49.224721
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16617 (x : ℕ) (h₀ : 16 * x = 26 * 32) : x = 52 := by
+    -- Apply the equality of integers to the given equation.
+    apply Eq.symm
+    -- Simplify the equation by performing the multiplication and division.
+    apply Eq.symm
+    norm_num at h₀ ⊢
+    -- Use the omega tactic to solve for x in the linear integer arithmetic context.
+    omega
+  -- The final result is that x = 52.
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 18,
+        "column": 2
+      },
+      "endPos": {
+        "line": 18,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:49.307422
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_13192 (P : ℝ) (h₀ : P + 6 * P * 4 / 100 = 1240) : P = 1000 := by
+  -- Simplify the equation by reducing the fraction and combining like terms.
+  field_simp at h₀
+  -- Combine the terms involving P on the left-hand side.
+  ring_nf at h₀
+  -- Solve the simplified linear equation using basic arithmetic operations.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:49.307485
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_13192 (P : ℝ) (h₀ : P + 6 * P * 4 / 100 = 1240) : P = 1000 := by
+  -- Simplify the equation by combining like terms and isolating P.
+  field_simp at h₀
+  ring_nf at h₀
+  -- Use linear arithmetic to solve for P.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:46:49.358691
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16617 (x : ℕ) (h₀ : 16 * x = 26 * 32) : x = 52 := by
+    -- We use the equality of products to isolate x.
+    apply Nat.eq_of_mul_eq_mul_right (show 0 < 16 by decide)
+    -- Simplify the right-hand side of the equation.
+    norm_num at h₀
+    -- Use linear arithmetic to confirm the solution.
+    linarith
+  -- Finally, we use the derived equality to conclude the proof.
+  simpa using h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 17,
+        "column": 2
+      },
+      "endPos": {
+        "line": 17,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+Not found
+
+==================================================
+Timestamp: 2025-02-28 16:50:17.675547
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_17394 (width height : ℕ) (h₀ : Nat.gcd width height = 1) (h₁ : width / height = 2 / 3)
+    (h₂ : 2 * (width + height) = 260) : width + height = 130 := by
+    -- We use the given ratio and perimeter to set up the equation.
+    have h₄ := Nat.gcd_eq_right width height h₀
+    -- Simplify the equation using the given ratio and perimeter.
+    omega
+  -- Finally, we conclude that the sum of width and height is 130.
+  exact h₃
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 32
+      },
+      "endPos": {
+        "line": 12,
+        "column": 37
+      },
+      "data": "application type mismatch\n  gcd_eq_right width\nargument\n  width\nhas type\n  \u2115 : Type\nbut is expected to have type\n  ?m.365 \u2223 ?m.364 : Prop"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 10,
+        "column": 64
+      },
+      "endPos": {
+        "line": 14,
+        "column": 9
+      },
+      "data": "unsolved goals\nwidth height : \u2115\nh\u2080 : width.gcd height = 1\nh\u2081 : width / height = 2 / 3\nh\u2082 : 2 * (width + height) = 260\n\u22a2 width + height = 130"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 16,
+        "column": 2
+      },
+      "endPos": {
+        "line": 16,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:50:17.830030
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_17612 (a1 a17 : ℤ) (d : ℤ) (h₀ : a1 = 3) (h₁ : a17 = 35) (h₂ : a17 = a1 + 16 * d) : d = 2 := by
+  -- Substitute the given values of a1 and a17 into the equation.
+  simp_all only [h₀, h₁, h₂]
+  -- We now have the equation 35 = 3 + 16d. Solve for d.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:21.915722
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_19678 (cherry_soda oranges_pop total_cans : ℕ) 
+  (h₀ : total_cans = 24)
+  (h₁ : total_cans = cherries_soda + 2 * cherries_soda) : cherries_soda = 8 := by
+      rw [h₀, h₁]
+    -- Simplify the equation to solve for the number of cherry soda cans.
+    linarith
+  -- We have found that the number of cherry soda cans is 8.
+  exact h₂
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 10
+      },
+      "endPos": {
+        "line": 12,
+        "column": 12
+      },
+      "data": "tactic 'rewrite' failed, did not find instance of the pattern in the target expression\n  total_cans\ncherries_soda cherry_soda oranges_pop total_cans : \u2115\nh\u2080 : total_cans = 24\nh\u2081 : total_cans = cherries_soda + 2 * cherries_soda\n\u22a2 cherries_soda = 8"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 4
+      },
+      "endPos": {
+        "line": 14,
+        "column": 12
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:21.975493
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20616 (n : ℕ) (h₀ : n > 0) :
+    let time_per_cut := 8;
+    let total_cuts := n - 1;
+    let total_time := time_per_cut * total_cuts;
+    total_time = 24 → n = 4 := by
+  -- Assume the given conditions and simplify the problem.
+  intro h₁
+  -- Normalize the numbers and simplify the equation.
+  norm_num at h₁
+  -- Use linear arithmetic to solve for n.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 19,
+        "column": 2
+      },
+      "endPos": {
+        "line": 19,
+        "column": 10
+      },
+      "data": "linarith failed to find a contradiction\nn : \u2115\nh\u2080 : n > 0\nh\u2081 : \u2115 := 8\n\u22a2 False\nfailed"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:21.976738
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20616 (n : ℕ) (h₀ : n > 0) :
+    let time_per_cut := 8;
+    let total_cuts := n - 1;
+    let total_time := time_per_cut * total_cuts;
+    total_time = 24 → n = 4 := by linarith
+    linarith
+  -- We have shown that n = 4, so we conclude the proof.
+  exact h₂
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 34
+      },
+      "endPos": {
+        "line": 13,
+        "column": 42
+      },
+      "data": "linarith failed to find a contradiction\nn : \u2115\nh\u2080 : n > 0\n\u22a2 False\nfailed"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 4
+      },
+      "endPos": {
+        "line": 14,
+        "column": 12
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:22.095210
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_11335 (d e : ℝ) (h₀ : (d - e) ^ 2 = 400 / 9) :
+    d ^ 2 + e ^ 2 - 2 * d * e = 400 / 9 := by
+    -- Expand (d - e)^2 using the binomial formula
+    rw [show d ^ 2 + e ^ 2 - 2 * d * e = (d - e) ^ 2 by ring]
+    -- Substitute the given equation into the expanded form
+    rw [h₀]
+  -- The result is already derived, so we simply use it
+  exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 16,
+        "column": 2
+      },
+      "endPos": {
+        "line": 16,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:22.099424
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16527 (x : ℝ) (h₀ : x > 0)
+    (h₁ : 40 * x = 60 * (x - 1)) : x = 3 := by
+  -- We start by simplifying the equation using field_simp to handle the multiplications.
+  -- This also helps in clearing the denominators.
+  field_simp at h₁
+  -- Next, we normalize the equation by expanding and simplifying it.
+  ring_nf at h₁
+  /- The equation now is:
+    40x = 60x - 60
+  -/
+  -- We then bring all terms involving x to one side and constants to the other.
+  linarith
+  -- Finally, we solve for x using linear arithmetic.
+  <;> linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 13,
+        "column": 2
+      },
+      "endPos": {
+        "line": 13,
+        "column": 18
+      },
+      "data": "simp made no progress"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:22.099851
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16527 (x : ℝ) (h₀ : x > 0)
+    (h₁ : 40 * x = 60 * (x - 1)) : x = 3 := by
+    -- First, distribute the 60 on the right side: 40x = 60x - 60.
+    have h₁ := h₁
+    -- Next, subtract 60x from both sides to get all x terms on one side: 40x - 60x = -60.
+    linarith
+  -- Finally, we verify that x = 3 satisfies the original equation.
+  simpa using h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 16,
+        "column": 2
+      },
+      "endPos": {
+        "line": 16,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:22.138183
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16527 (x : ℝ) (h₀ : x > 0)
+    (h₁ : 40 * x = 60 * (x - 1)) : x = 3 := by linarith
+  -- Conclude the proof
+  exact h₄
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 2
+      },
+      "endPos": {
+        "line": 12,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:22.141924
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_20616 (n : ℕ) (h₀ : n > 0) :
+    let time_per_cut := 8;
+    let total_cuts := n - 1;
+    let total_time := time_per_cut * total_cuts;
+    total_time = 24 → n = 4 := by
+  -- Introduce the time per cut, total cuts, and total time variables.
+  intro time_per_cut total_cuts total_time h₁
+  -- Simplify the total time equation by substituting the values.
+  simp [time_per_cut, total_cuts, total_time] at h₁
+  -- Use the omega tactic to solve the linear equation.
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:22.143006
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_21242 (p : ℚ)
+    (h₀ : p = 3 / 34) : p = 3 / 34 ∧ ∃ m n : ℕ, m < n ∧ p = m / n ∧ Nat.gcd m n = 1 := by
+  -- Simplify the goal by using the given hypothesis h₀.
+  simp_all
+  -- We need to show that 3 / 34 is a rational number, which it is by definition.
+  -- Additionally, we need to provide a fraction representation of 3 / 34 in its simplest form.
+  refine' ⟨_, _⟩
+  -- For the first part, we simply restate that 3 / 34 is equal to itself.
+  exact h₀
+  -- For the second part, we need to find natural numbers m and n such that m < n, p = m / n, and gcd(m, n) = 1.
+  exact ⟨3, 34, by norm_num, rfl, by norm_num⟩
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 17,
+        "column": 2
+      },
+      "endPos": {
+        "line": 17,
+        "column": 10
+      },
+      "data": "type mismatch\n  h\u2080\nhas type\n  p = 3 / 34 : Prop\nbut is expected to have type\n  \u2115 : Type"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:22.143264
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16527 (x : ℝ) (h₀ : x > 0)
+    (h₁ : 40 * x = 60 * (x - 1)) : x = 3 := by
+    -- We start by simplifying the equation using ring operations.
+    ring_nf at h₁ ⊢
+    -- We solve the equation using linear arithmetic.
+    linarith
+  -- Finally, we conclude that x = 3.
+  exact h₂
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 16,
+        "column": 2
+      },
+      "endPos": {
+        "line": 16,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:22.162312
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_19678 (cherry_soda oranges_pop total_cans : ℕ) 
+  (h₀ : total_cans = 24)
+  (h₁ : total_cans = cherries_soda + 2 * cherries_soda) : cherries_soda = 8 := by
+    -- We substitute the given total_cans into the equation.
+    rw [h₀] at h₁
+    -- We solve the equation using arithmetic.
+    linarith
+  -- We have proven that cherries_soda = 8, so we conclude the proof.
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 17,
+        "column": 2
+      },
+      "endPos": {
+        "line": 17,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:22.273287
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_16527 (x : ℝ) (h₀ : x > 0)
+    (h₁ : 40 * x = 60 * (x - 1)) : x = 3 := by
+    apply Eq.symm
+    -- Apply the equality of subtraction to the equation
+    apply Eq.symm
+    apply mul_left_cancel₀ (sub_ne_zero_of_ne h₀)
+    -- Simplify the equation by distributing and rearranging terms
+    linarith
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 14,
+        "column": 46
+      },
+      "endPos": {
+        "line": 14,
+        "column": 48
+      },
+      "data": "application type mismatch\n  sub_ne_zero_of_ne h\u2080\nargument\n  h\u2080\nhas type\n  x > 0 : Prop\nbut is expected to have type\n  ?m.365 \u2260 ?m.366 : Prop"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 17,
+        "column": 2
+      },
+      "endPos": {
+        "line": 17,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:54.318721
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_27186 (hours_per_adult_grave : ℝ) (hours_per_child_grave : ℝ) (x : ℝ)
+    (h₀ : hours_per_adult_grave = 3) (h₁ : hours_per_child_grave = 2) (h₂ : x * hours_per_adult_grave + 1 * hours_per_child_grave = 17) :
+    x = 5 := by
+  -- Substitute the given values for hours_per_adult_grave and hours_per_child_grave.
+  simp_all only [mul_one, mul_zero, mul_add, mul_comm, mul_left_comm]
+  -- Simplify the equation using the given values.
+  ring_nf
+  -- Use linear arithmetic to solve for x.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:54.359389
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_27186 (hours_per_adult_grave : ℝ) (hours_per_child_grave : ℝ) (x : ℝ)
+    (h₀ : hours_per_adult_grave = 3) (h₁ : hours_per_child_grave = 2) (h₂ : x * hours_per_adult_grave + 1 * hours_per_child_grave = 17) :
+    x = 5 := by
+  -- Substitute the given values for hours_per_adult_grave and hours_per_child_grave
+  rw [h₀] at h₂
+  rw [h₁] at h₂
+  -- Simplify the equation using the given values
+  simp_all
+  -- Solve the linear equation using linarith
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:51:54.443549
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_13971 (x : ℝ) (h₀ : x > 0) (h₁ : x / 4 = (x - 6) / 2) : x = 12 := by
+    -- Eliminate the denominators by multiplying both sides by 4
+    field_simp at h₁
+    -- Simplify the equation to solve for x
+    linarith
+  -- The solution is already derived, so we simply exact it
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 2
+      },
+      "endPos": {
+        "line": 15,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:52:26.872102
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_1601 (x : ℝ) (h₀ : x * (2 / 5) + 45 + 15 = x) : x = 100 := by
+  -- Simplify the equation by combining like terms.
+  ring_nf at h₀
+  -- Further simplify the equation to isolate x.
+  ring_nf
+  -- Solve for x by normalizing the equation.
+  norm_num at h₀
+  -- Use linear arithmetic to confirm the solution.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:53:26.916440
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_6059 (x : ℚ)
+    (h : 25 / 100 * x = 20 / 100 * 30) : x = 24 := by
+  -- Convert the given equation into a rational number form.
+  field_simp at h
+  -- Simplify the equation using basic arithmetic operations.
+  norm_num at h
+  /- The equation 25/100 * x = 20/100 * 30 simplifies to:
+     1/4 * x = 6
+     Further simplifying, x = 24.
+  -/
+  -- Solve for x by isolating it on one side of the equation.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:53:58.434460
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_2647 (x : ℕ) (h₀ : 7 * 18 - x * 18 = 18) : x = 6 := by linarith
+  -- The final answer is x = 6
+  exact this
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 9,
+        "column": 67
+      },
+      "endPos": {
+        "line": 9,
+        "column": 75
+      },
+      "data": "linarith failed to find a contradiction\ncase h1.h\nx : \u2115\nh\u2080 : 7 * 18 - x * 18 = 18\na\u271d : x < 6\n\u22a2 False\nfailed"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 11,
+        "column": 2
+      },
+      "endPos": {
+        "line": 11,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:54:31.201772
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25984 (n : ℕ) (h₀ : 4 * n + 37 = 6 * n + 1) : n = 18 := by
+  -- Given equation: 4n + 37 = 6n + 1
+  have h₁ : 4 * n + 37 = 6 * n + 1 := h₀
+  -- We need to solve for n, so we start by isolating n
+  apply Eq.symm
+  -- Rewrite the equation to prepare for solving
+  rw [← Nat.mod_add_div (6 * n + 1) 4]
+  -- Simplify the equation using modular arithmetic and properties of equality
+  simp [h₁, Nat.mul_mod, Nat.add_mod]
+  -- Use the omega tactic to solve the linear Diophantine equation
+  omega
+  -- Use the omega tactic again to ensure the solution is correct
+  <;> omega
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 6
+      },
+      "endPos": {
+        "line": 15,
+        "column": 37
+      },
+      "data": "tactic 'rewrite' failed, did not find instance of the pattern in the target expression\n  6 * n + 1\ncase h\nn : \u2115\nh\u2080 h\u2081 : 4 * n + 37 = 6 * n + 1\n\u22a2 18 = n"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:54:31.239746
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5465 (C₁ C₂ : ℝ) (h₀ : C₁ = 2) (h₁ : C₂ = 6) (h₂ : C₂ = C₁ + 4) :
+    C₂ ∈ Set.Icc (4 : ℝ) 8 := by
+  -- Simplify the interval condition using the given values.
+  norm_num [Set.mem_Icc] at h₂
+  simp_all
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 10,
+        "column": 30
+      },
+      "endPos": {
+        "line": 13,
+        "column": 10
+      },
+      "data": "unsolved goals\nC\u2081 C\u2082 : \u211d\nh\u2080 : C\u2081 = 2\nh\u2081 : 2 + 4 = 6\nh\u2082 : C\u2082 = 6\n\u22a2 4 \u2264 6 \u2227 6 \u2264 8"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:54:31.249858
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25984 (n : ℕ) (h₀ : 4 * n + 37 = 6 * n + 1) : n = 18 := by
+  -- Step 1: Start with the given equation and simplify it by subtracting 4n from both sides.
+  have h₁ : 4 * n + 37 = 6 * n + 1 := h₀
+  -- Step 2: Use the omega tactic to solve the linear Diophantine equation for n.
+  omega
+  -- Step 3: Verify the solution by substituting n = 18 back into the original equation.
+  -- This step is implicitly handled by the omega tactic and the proof is complete.
+  <;> simp_all
+  <;> omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:54:31.288830
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_15182 (x y : ℕ) (h₀ : x + y = 48) (h₁ : 2 * x + 4 * y = 140) : x = 26 := by
+    -- We use the method of elimination to solve for x.
+    -- First, we note that the equations are consistent and have a unique solution.
+    apply Eq.symm
+    -- We will use the omega tactic to solve the system of linear equations.
+    omega
+  -- Finally, we use the found value of x to complete the proof.
+  assumption
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 16,
+        "column": 2
+      },
+      "endPos": {
+        "line": 16,
+        "column": 12
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:54:31.289311
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25984 (n : ℕ) (h₀ : 4 * n + 37 = 6 * n + 1) : n = 18 := by
+  -- We need to show that n = 18.
+  apply Eq.symm
+  -- Use the fact that the equation holds to solve for n.
+  apply Eq.symm
+  -- Simplify the equation by normalizing the numbers.
+  norm_num at h₀ ⊢
+  -- Use the omega tactic to solve the linear equation.
+  omega
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:54:31.303152
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_5465 (C₁ C₂ : ℝ) (h₀ : C₁ = 2) (h₁ : C₂ = 6) (h₂ : C₂ = C₁ + 4) :
+    C₂ ∈ Set.Icc (4 : ℝ) 8 := by
+  -- Substitute the given value of C₁ into the equation C₂ = C₁ + 4.
+  rw [h₂, h₀]
+  -- Verify that the substituted value of C₂ (6) lies within the interval [4, 8].
+  constructor <;> norm_num
+  <;> linarith
+  <;> linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:54:31.572977
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_25984 (n : ℕ) (h₀ : 4 * n + 37 = 6 * n + 1) : n = 18 := by
+    -- Use the given equation to derive the value of n.
+    apply Eq.symm
+    -- Simplify the equation using basic arithmetic operations.
+    linarith
+  -- The final result should be n = 18.
+  exact h₁
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 15,
+        "column": 2
+      },
+      "endPos": {
+        "line": 15,
+        "column": 7
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+Not found
+
+==================================================
+Timestamp: 2025-02-28 16:55:03.577198
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_23642 (A b h : ℝ) (h₀ : A = 600) (h₁ : b = 30) (h₂ : A = 1/2 * b * h) :
+    h = 40 := by norm_num
+  -- Solve for h by dividing both sides by 15
+  field_simp [h₃] at h₂ ⊢
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": [
+    {
+      "severity": "error",
+      "pos": {
+        "line": 10,
+        "column": 14
+      },
+      "endPos": {
+        "line": 10,
+        "column": 25
+      },
+      "data": "unsolved goals\nA b h : \u211d\nh\u2080 : A = 600\nh\u2081 : b = 30\nh\u2082 : A = 1 / 2 * b * h\n\u22a2 h = 40"
+    },
+    {
+      "severity": "error",
+      "pos": {
+        "line": 12,
+        "column": 2
+      },
+      "endPos": {
+        "line": 12,
+        "column": 12
+      },
+      "data": "unexpected identifier; expected command"
+    }
+  ]
+}
+
+==================================================
+Timestamp: 2025-02-28 16:55:03.650177
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_23642 (A b h : ℝ) (h₀ : A = 600) (h₁ : b = 30) (h₂ : A = 1/2 * b * h) :
+    h = 40 := by
+  -- Substitute the given values into the area formula
+  rw [h₀] at h₂
+  rw [h₁] at h₂
+  -- Simplify the equation by clearing denominators
+  field_simp at h₂
+  -- Solve for h using linear arithmetic
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:55:03.752744
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_23642 (A b h : ℝ) (h₀ : A = 600) (h₁ : b = 30) (h₂ : A = 1/2 * b * h) :
+    h = 40 := by
+  -- Simplify the given area equation using the provided values for A and b.
+  simp_all only [mul_div_cancel_left, mul_one, mul_assoc]
+  -- Normalize the numbers to simplify the equation further.
+  norm_num
+  -- Solve for h using linear arithmetic.
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}
+
+==================================================
+Timestamp: 2025-02-28 16:55:03.840434
+Full code:
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+theorem thm_23642 (A b h : ℝ) (h₀ : A = 600) (h₁ : b = 30) (h₂ : A = 1/2 * b * h) :
+    h = 40 := by
+  -- Substitute A = 600 into the area formula
+  rw [h₀] at h₂
+  -- Substitute b = 30 into the formula
+  rw [h₁] at h₂
+  -- Simplify the equation to solve for h
+  field_simp at h₂
+  -- Solve the equation using linear arithmetic
+  linarith
+Result:
+{
+  "sorries": [],
+  "errors": []
+}

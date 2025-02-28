@@ -4,12 +4,12 @@ export VLLM_ATTENTION_BACKEND=XFORMERS
 
 PYTHONUNBUFFERED=1 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=reinforce_plus_plus \
-    data.train_files=./data/ds_prover/train.parquet \
-    data.val_files=./data/ds_prover/test.parquet \
+    data.train_files=/AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/new_verl/verl/data/ds_prover/train.parquet \
+    data.val_files=/AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/new_verl/verl/data/ds_prover/test.parquet \
     data.train_batch_size=8 \
     data.val_batch_size=10 \
     data.max_prompt_length=512 \
-    data.max_response_length=3000\
+    data.max_response_length=1000\
     actor_rollout_ref.model.path=/AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/custom_model/r1-7B \
     actor_rollout_ref.actor.optim.lr=1e-6 \
     actor_rollout_ref.model.use_remove_padding=True \

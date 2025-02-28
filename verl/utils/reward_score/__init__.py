@@ -15,7 +15,7 @@
 
 
 def _default_compute_score(data_source, solution_str, ground_truth, extra_info=None):
-    if "ds" in data_source or "lean" in data_source:
+    if "Prover" in data_source or "lean" in data_source:
         from . import lean
         res = lean.compute_score(solution_str,ground_truth)
     elif data_source == 'openai/gsm8k':
