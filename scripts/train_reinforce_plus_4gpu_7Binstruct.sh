@@ -2,7 +2,7 @@ set -x
 
 export VLLM_ATTENTION_BACKEND=XFORMERS
 
-python3 -m verl.trainer.main_ppo \
+PYTHONUNBUFFERED=1 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=reinforce_plus_plus \
     data.train_files=./data/ds_prover/train.parquet \
     data.val_files=./data/ds_prover/test.parquet \
@@ -10,7 +10,7 @@ python3 -m verl.trainer.main_ppo \
     data.val_batch_size=10 \
     data.max_prompt_length=512 \
     data.max_response_length=3000\
-    actor_rollout_ref.model.path=./custom_model/r1-7B \
+    actor_rollout_ref.model.path=/AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/custom_model/r1-7B \
     actor_rollout_ref.actor.optim.lr=1e-6 \
     actor_rollout_ref.model.use_remove_padding=True \
     actor_rollout_ref.actor.ppo_mini_batch_size=256 \
@@ -20,7 +20,6 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.actor.kl_loss_type=low_var_kl \
     actor_rollout_ref.model.enable_gradient_checkpointing=True \
     actor_rollout_ref.actor.fsdp_config.param_offload=False \
-    actor_rollout_ref.actor.fsdp_config.grad_offload=False \
     actor_rollout_ref.actor.fsdp_config.optimizer_offload=False \
     actor_rollout_ref.rollout.log_prob_micro_batch_size=160 \
     actor_rollout_ref.rollout.tensor_model_parallel_size=2 \
@@ -28,11 +27,11 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.rollout.gpu_memory_utilization=0.6 \
     actor_rollout_ref.rollout.n=8 \
     actor_rollout_ref.ref.log_prob_micro_batch_size=160 \
-    actor_rollout_ref.ref.fsdp_config.param_offload=True \
+    actor_rollout_ref.ref.fsdp_config.param_offload=False \
     algorithm.kl_ctrl.kl_coef=0 \
-    +reward_model.reward_manager=prime \
+    ++reward_model.reward_manager=prime \
     trainer.critic_warmup=0 \
-    trainer.logger=['wandb'] \
+    trainer.logger=['wandb','console'] \
     trainer.project_name='RF_lean_dsprover' \
     trainer.experiment_name='RF_lean_dsprover-004' \
     trainer.n_gpus_per_node=8 \
