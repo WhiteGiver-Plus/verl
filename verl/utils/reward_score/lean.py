@@ -42,57 +42,44 @@ def verify_proof(code: str, formal_statement: str,
                 lake_path: str = DEFAULT_LAKE_PATH,
                 lean_workspace: str = DEFAULT_LEAN_WORKSPACE,
                 timeout: int = 300) -> bool:
-    """Verify if the proof code compiles successfully in Lean.
-    
-    Args:
-        code: The proof code to verify
-        formal_statement: The theorem statement prefix
-        lake_path: Path to lake executable
-        lean_workspace: Path to Lean workspace
-        timeout: Maximum verification time in seconds
-        
-    Returns:
-        True if verification succeeds, False otherwise
-    """
-    
     full_code = formal_statement.strip() + code
-    
     command = {"cmd": full_code, "allTactics": False, "ast": False, 
               "tactics": False, "premises": False}
     message_str = json.dumps(command, ensure_ascii=False)
     
+    process = None
     try:
         with tempfile.TemporaryFile(mode="w+", encoding="utf-8") as temp_file:
             temp_file.write(message_str + "\r\n\r\n")
             temp_file.seek(0)
-            outputs = subprocess.run(
+            process = subprocess.Popen(
                 [lake_path, "exe", "repl"],
                 stdin=temp_file,
-                capture_output=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
                 text=True,
-                cwd=lean_workspace,
-                timeout=timeout,
+                cwd=lean_workspace
             )
-        result = json.loads(outputs.stdout)
+            outputs, errors = process.communicate(timeout=timeout)
+        result = json.loads(outputs)
         result = {
             "sorries": result.get("sorries", []),
-            "errors": [m for m in result.get("messages", []) 
-                      if m["severity"] == "error"],
+            "errors": [m for m in result.get("messages", []) if m["severity"] == "error"],
         }
-        
-        # Log with 10% probability to a file
-        if random.random() < 1:
-            with open('verification_logs.txt', 'a', encoding='utf-8') as f:
-                f.write(f"\n{'='*50}\n")
-                f.write(f"Timestamp: {datetime.datetime.now()}\n")
-                f.write(f"Full code:\n{full_code}\n")
-                f.write(f"Result:\n{json.dumps(result, indent=2)}\n")
-            
         return not result["errors"] and not result["sorries"]
-    
+    except subprocess.TimeoutExpired:
+        if process:
+            process.kill()  # 强制杀死进程
+        logging.error(f"Verification timed out after {timeout}s")
+        return False
     except Exception as e:
+        if process:
+            process.kill()  # 清理异常情况下的进程
         logging.error(f"Verification failed: {str(e)}")
         return False
+    finally:
+        if process and process.poll() is None:  # 如果进程仍未退出
+            process.kill()
 
 def compute_score(solution_str: str, ground_truth: dict, 
                  method: str = 'strict',
