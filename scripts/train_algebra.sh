@@ -4,12 +4,12 @@ export VLLM_ATTENTION_BACKEND=XFORMERS
 
 PYTHONUNBUFFERED=1 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=reinforce_plus_plus \
-    data.train_files=/AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/new_verl/verl/data/ds_prover/train.parquet \
-    data.val_files=/AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/new_verl/verl/data/ds_prover/test.parquet \
+    data.train_files=/AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/new_verl/verl/data/lean_algebra/train.parquet \
+    data.val_files=/AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/new_verl/verl/data/lean_algebra/test.parquet \
     data.train_batch_size=8 \
-    data.val_batch_size=10 \
+    data.val_batch_size=8 \
     data.max_prompt_length=512 \
-    data.max_response_length=3000\
+    data.max_response_length=5000\
     actor_rollout_ref.model.path=/AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/custom_model/r1-7B \
     actor_rollout_ref.actor.optim.lr=1e-6 \
     actor_rollout_ref.model.use_remove_padding=True \
@@ -36,7 +36,7 @@ PYTHONUNBUFFERED=1 python3 -m verl.trainer.main_ppo \
     trainer.experiment_name='RF_lean_dsprover-004' \
     trainer.n_gpus_per_node=8 \
     trainer.nnodes=1 \
-    trainer.save_freq=-1 \
+    trainer.save_freq=200 \
     trainer.test_freq=10 \
-    trainer.total_epochs=1 $@
+    trainer.total_epochs=2 $@
 

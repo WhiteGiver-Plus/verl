@@ -114,3 +114,7 @@ tests/e2e/toy_examples/deepspeed/synchronous/output.txt
 
 # ckpt
 *.lock
+
+**/temp.py
+**/temp.ipynb
+**/*.log
