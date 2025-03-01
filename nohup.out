@@ -3230,3 +3230,51 @@ KeyboardInterrupt:
 [36m(WorkerDict pid=836397)[0m Actor use_remove_padding=True[32m [repeated 7x across cluster][0m
 [36m(WorkerDict pid=836062)[0m wrap_policy: functools.partial(<function _or_policy at 0x1496a4717520>, policies=[functools.partial(<function transformer_auto_wrap_policy at 0x1496a4717400>, transformer_layer_cls={<class 'transformers.models.qwen2.modeling_qwen2.Qwen2DecoderLayer'>})])
 [36m(WorkerDict pid=836394)[0m wrap_policy: functools.partial(<function _or_policy at 0x143c47acf520>, policies=[functools.partial(<function transformer_auto_wrap_policy at 0x143c47acf400>, transformer_layer_cls={<class 'transformers.models.qwen2.modeling_qwen2.Qwen2DecoderLayer'>})])
+[36m(WorkerDict pid=836394)[0m Total steps: 394, num_warmup_steps: 0
+[36m(WorkerDict pid=836062)[0m Before building vllm rollout, memory allocated (GB): 3.5700716972351074, memory reserved (GB): 17.36328125
+[36m(WorkerDict pid=836396)[0m INFO 03-01 12:13:40 config.py:887] Defaulting to use ray for distributed inference
+[36m(WorkerDict pid=836396)[0m INFO 03-01 12:13:40 config.py:1005] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[36m(WorkerDict pid=836396)[0m WARNING 03-01 12:13:40 config.py:380] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used
+[36m(WorkerDict pid=836062)[0m Actor use_remove_padding=True[32m [repeated 8x across cluster][0m
+[36m(WorkerDict pid=836397)[0m wrap_policy: functools.partial(<function _or_policy at 0x147ad0be7520>, policies=[functools.partial(<function transformer_auto_wrap_policy at 0x147ad0be7400>, transformer_layer_cls={<class 'transformers.models.qwen2.modeling_qwen2.Qwen2DecoderLayer'>})])[32m [repeated 6x across cluster][0m
+[36m(WorkerDict pid=836395)[0m local rank 0
+[36m(WorkerDict pid=836395)[0m INFO 03-01 12:13:40 selector.py:115] Using XFormers backend.
+[36m(WorkerDict pid=836396)[0m /miniconda3/envs/leanrl/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:211: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+[36m(WorkerDict pid=836396)[0m   @torch.library.impl_abstract("xformers_flash::flash_fwd")
+[36m(WorkerDict pid=836396)[0m   @torch.library.impl_abstract("xformers_flash::flash_bwd")
+[36m(WorkerDict pid=836062)[0m Total steps: 394, num_warmup_steps: 0[32m [repeated 7x across cluster][0m
+[36m(WorkerDict pid=836062)[0m INFO 03-01 12:13:42 utils.py:1008] Found nccl from library libnccl.so.2
+[36m(WorkerDict pid=836062)[0m INFO 03-01 12:13:42 pynccl.py:63] vLLM is using nccl==2.20.5
+[36m(WorkerDict pid=836399)[0m NCCL version 2.20.5+cuda12.4
+[36m(WorkerDict pid=836062)[0m INFO 03-01 12:13:42 shm_broadcast.py:241] vLLM message queue communication handle: Handle(connect_ip='127.0.0.1', local_reader_ranks=[1], buffer=<vllm.distributed.device_communicators.shm_broadcast.ShmRingBuffer object at 0x149585e77bb0>, local_subscribe_port=46383, remote_subscribe_port=None)
+[36m(WorkerDict pid=836062)[0m before init cache memory allocated: 11.512467456GB, reserved: 11.616124928GB
+[36m(WorkerDict pid=836062)[0m after init cache memory allocated: 53.096042496GB, reserved: 53.248786432GB
+[36m(WorkerDict pid=836062)[0m INFO 03-01 12:13:40 config.py:887] Defaulting to use ray for distributed inference[32m [repeated 7x across cluster][0m
+[36m(WorkerDict pid=836062)[0m INFO 03-01 12:13:40 config.py:1005] Chunked prefill is enabled with max_num_batched_tokens=8192.[32m [repeated 7x across cluster][0m
+[36m(WorkerDict pid=836062)[0m WARNING 03-01 12:13:40 config.py:380] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used[32m [repeated 7x across cluster][0m
+[36m(WorkerDict pid=836062)[0m local rank 0[32m [repeated 7x across cluster][0m
+[36m(WorkerDict pid=836397)[0m INFO 03-01 12:13:43 selector.py:115] Using XFormers backend.[32m [repeated 15x across cluster][0m
+[36m(WorkerDict pid=836397)[0m INFO 03-01 12:13:42 utils.py:1008] Found nccl from library libnccl.so.2[32m [repeated 7x across cluster][0m
+[36m(WorkerDict pid=836397)[0m INFO 03-01 12:13:42 pynccl.py:63] vLLM is using nccl==2.20.5[32m [repeated 7x across cluster][0m
+[36m(WorkerDict pid=836397)[0m NCCL version 2.20.5+cuda12.4[32m [repeated 2x across cluster][0m
+[36m(WorkerDict pid=836397)[0m INFO 03-01 12:13:42 shm_broadcast.py:241] vLLM message queue communication handle: Handle(connect_ip='127.0.0.1', local_reader_ranks=[1], buffer=<vllm.distributed.device_communicators.shm_broadcast.ShmRingBuffer object at 0x1479dc502590>, local_subscribe_port=42375, remote_subscribe_port=None)[32m [repeated 3x across cluster][0m
+[36m(WorkerDict pid=836062)[0m /miniconda3/envs/leanrl/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:689: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+[36m(WorkerDict pid=836062)[0m   warnings.warn(
+[36m(WorkerDict pid=836062)[0m /miniconda3/envs/leanrl/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:344: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.[32m [repeated 15x across cluster][0m
+[36m(WorkerDict pid=836062)[0m   @torch.library.impl_abstract("xformers_flash::flash_fwd")[32m [repeated 7x across cluster][0m
+[36m(WorkerDict pid=836062)[0m   @torch.library.impl_abstract("xformers_flash::flash_bwd")[32m [repeated 7x across cluster][0m
+[36m(WorkerDict pid=836062)[0m kwargs: {'n': 8, 'logprobs': 1, 'max_tokens': 5000, 'detokenize': False, 'temperature': 1.0, 'top_k': -1, 'top_p': 1, 'ignore_eos': False}
+[36m(WorkerDict pid=836062)[0m After building vllm rollout, memory allocated (GB): 42.336981773376465, memory reserved (GB): 49.591796875
+[36m(WorkerDict pid=836062)[0m After building sharding manager, memory allocated (GB): 42.336981773376465, memory reserved (GB): 49.591796875
+[36m(main_task pid=835291)[0m wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+[36m(main_task pid=835291)[0m wandb: Currently logged in as: qzh15261375660 (projectnumina) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+[36m(main_task pid=835291)[0m wandb: creating run
+[36m(main_task pid=835291)[0m wandb: Tracking run with wandb version 0.19.7
+[36m(main_task pid=835291)[0m wandb: Run data is saved locally in /AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/new_verl/verl/wandb/run-20250301_121353-yvtanafm
+[36m(main_task pid=835291)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(main_task pid=835291)[0m wandb: Syncing run RF_lean_algebra_03011212
+[36m(main_task pid=835291)[0m wandb: ⭐️ View project at https://wandb.ai/projectnumina/RF_lean_algebra
+[36m(main_task pid=835291)[0m wandb: 🚀 View run at https://wandb.ai/projectnumina/RF_lean_algebra/runs/yvtanafm
+[36m(main_task pid=835291)[0m Using LocalLogger is deprecated. The constructor API will change 
+[36m(main_task pid=835291)[0m Checkpoint tracker file does not exist: %s /AI4M/users/qzh/lean_test/Agent/Temp/LeanRL/new_verl/verl/checkpoints/RF_lean_algebra/RF_lean_algebra_03011212/latest_checkpointed_iteration.txt
+[36m(main_task pid=835291)[0m Training from scratch
