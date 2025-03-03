@@ -34,6 +34,7 @@ def kill_repl_processes():
     """运行 pkill 命令终止所有 Lean REPL 进程。"""
     try:
         cmd = ['pkill', '-9', '-f', '.lake/packages/REPL/.lake/build/bin/repl']
+        # pkill -9 -f .lake/packages/REPL/.lake/build/bin/repl
         subprocess.run(cmd, check=True, stderr=subprocess.PIPE, text=True)
         logging.info("Successfully killed all Lean REPL processes.")
     except subprocess.CalledProcessError as e:
