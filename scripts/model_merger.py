@@ -162,9 +162,5 @@ if __name__ == '__main__':
             repo_type="model"
         )
     
-    
 
-
-
-
-
+# python scripts/model_merger.py --local_dir checkpoints/RF_lean_wkbk/RF_lean_wkbk_03022218/global_step_400/actor --hf_upload_path pkuAI4M/leanwkbk_prover_test_v1
